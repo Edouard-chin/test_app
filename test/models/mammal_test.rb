@@ -6,6 +6,7 @@ class MammalTest < ActiveSupport::TestCase
     owner.association(:mammals).send(:find_target)
     Rails.application.reloaders.last.execute
     Rails::Autoloaders.main.reload
-    assert true
+
+    owner.association(:mammals).send(:find_target) # Error
   end
 end
