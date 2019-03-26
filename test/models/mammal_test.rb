@@ -5,7 +5,6 @@ class MammalTest < ActiveSupport::TestCase
     owner = Owner.first
     owner.association(:mammals).send(:find_target)
     Rails.application.reloaders.last.execute
-    Rails::Autoloaders.main.reload
 
     owner.association(:mammals).send(:find_target) # Error
   end
