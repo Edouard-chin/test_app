@@ -1,3 +1,3 @@
 class Mammal < ApplicationRecord
-  self.abstract_class = true
+  belongs_to :owner
 end
